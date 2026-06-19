@@ -201,19 +201,12 @@ h4,h5    { font-family: var(--font-b); font-weight: 600; color: var(--text-dark)
 .breadcrumb-current { color: var(--gold-light); }
 
 /* ── HERO ── */
-.hero { background: var(--hlg); padding: 80px 0 96px; position: relative; overflow: hidden; }
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    radial-gradient(ellipse 55% 80% at 92% 50%, rgba(192,155,48,0.07) 0%, transparent 65%),
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C09B30' fill-opacity='0.045'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
-}
+.hero { background: var(--hlg); padding: 56px 0 64px; position: relative; }
 .hero .container { position: relative; }
-.hero-bc { margin-bottom: 36px; }
-.hero h1 { font-size: clamp(32px, 4.5vw, 54px); color: var(--white); margin-bottom: 20px; }
+.hero-bc { margin-bottom: 24px; }
+.hero h1 { font-size: clamp(28px, 4vw, 44px); color: var(--white); margin-bottom: 14px; }
 .hero h1 em { font-style: italic; color: var(--gold-light); }
-.hero-desc { font-size: 1.05rem; color: rgba(255,255,255,0.72); margin-bottom: 36px; max-width: 580px; line-height: 1.82; }
+.hero-desc { font-size: 1rem; color: rgba(255,255,255,0.72); margin-bottom: 24px; max-width: 580px; line-height: 1.7; }
 .hero-cta  { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 
 .hero-stats {
@@ -221,7 +214,7 @@ h4,h5    { font-family: var(--font-b); font-weight: 600; color: var(--text-dark)
   gap: 1px; background: rgba(192,155,48,0.18);
   border: 1px solid rgba(192,155,48,0.18);
   border-radius: var(--r-md); overflow: hidden;
-  margin-top: 52px; max-width: 580px;
+  margin-top: 32px; max-width: 580px;
 }
 .hero-stat { background: rgba(255,255,255,0.04); padding: 20px 22px; text-align: center; }
 .hero-stat-num { font-family: var(--font-b); font-size: 2rem; font-weight: 700; color: var(--gold-light); line-height: 1; margin-bottom: 4px; }
@@ -511,16 +504,62 @@ h4,h5    { font-family: var(--font-b); font-weight: 600; color: var(--text-dark)
 .cta-form select:focus { border-color: rgba(192,155,48,0.5); }
 .cta-note   { font-size: 0.72rem; color: rgba(255,255,255,0.38); text-align: center; }
 
-/* ── Navlinks ── */
-.navlinks { background: var(--cream); padding: 44px 0; border-top: 1px solid var(--border); }
-.navlinks h2 { font-family: var(--font-b); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 22px; }
-.navlinks-wrap { display: flex; flex-wrap: wrap; gap: 9px; }
-.navlink {
-  padding: 7px 15px; border: 1px solid var(--border); border-radius: 3px;
-  font-size: 0.845rem; color: var(--text-dark); text-decoration: none; background: var(--white);
-  transition: all 0.18s;
+/* ── HLG FOOTER ── */
+.hlg-footer {
+  background: var(--hlg);
+  color: rgba(255,255,255,0.85);
+  padding: 56px 0 0;
 }
-.navlink:hover { border-color: var(--hlg); color: var(--hlg); background: var(--hlg-pale); }
+.hlg-footer-container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+.hlg-footer-upper {
+  display: grid;
+  grid-template-columns: 1.1fr 1.6fr;
+  gap: 56px;
+  padding-bottom: 40px;
+}
+.hlg-footer-logo { margin-bottom: 18px; }
+.hlg-footer-socials { display: flex; gap: 10px; margin-bottom: 20px; }
+.hlg-footer-socials a { display: flex; transition: opacity 0.2s; }
+.hlg-footer-socials a:hover { opacity: 0.7; }
+.hlg-footer-desc { font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.6); margin-bottom: 20px; max-width: 380px; }
+.hlg-footer-links { display: flex; flex-direction: column; gap: 8px; }
+.hlg-footer-links a {
+  font-size: 0.8rem; color: rgba(255,255,255,0.55);
+  text-decoration: none; transition: color 0.2s; width: fit-content;
+}
+.hlg-footer-links a:hover { color: var(--gold-light); text-decoration: underline; }
+
+.hlg-footer-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.hlg-office { display: flex; flex-direction: column; gap: 12px; }
+.hlg-office-title {
+  font-size: 0.85rem; font-weight: 700; color: var(--gold-light);
+  text-transform: uppercase; letter-spacing: 0.05em;
+  padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.hlg-office-detail {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 0.8rem; line-height: 1.55; color: rgba(255,255,255,0.65);
+}
+.hlg-office-detail svg { flex-shrink: 0; margin-top: 2px; opacity: 0.7; }
+.hlg-office-detail a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+.hlg-office-detail a:hover { color: var(--gold-light); text-decoration: underline; }
+
+.hlg-footer-lower {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 22px 0;
+}
+.hlg-footer-license { font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
+.hlg-footer-lower hr { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 14px; }
+.hlg-footer-copyright { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+
+@media (max-width: 768px) {
+  .hlg-footer-upper { grid-template-columns: 1fr; gap: 32px; }
+  .hlg-footer-right { grid-template-columns: 1fr; gap: 24px; }
+}
 
 /* ── Responsive ── */
 /* ── Desktop-only grids (declared here, overridden in breakpoints) ── */
@@ -619,8 +658,8 @@ h4,h5    { font-family: var(--font-b); font-weight: 600; color: var(--text-dark)
   .step-num       { font-size: 2.2rem; }
 
   /* Navlinks */
-  .navlinks-wrap  { gap: 7px; }
-  .navlink        { font-size: 0.8rem; padding: 6px 12px; }
+  .hlg-footer { padding-top: 40px; }
+  .hlg-footer-right { grid-template-columns: 1fr; }
 }
 
 /* ══════════════════════════════════════
@@ -733,10 +772,10 @@ h4,h5    { font-family: var(--font-b); font-weight: 600; color: var(--text-dark)
       </ol>
     </nav>
 
-    <div style="max-width:700px">
+    <div style="max-width:680px">
       <span class="eyebrow">Harvey Law Group · Châu Âu</span>
-      <h1>Định cư Châu Âu –<br><em>Thường Trú Nhân & Quốc Tịch</em><br>từ 12 Quốc Gia</h1>
-      <p class="hero-desc">Từ Golden Visa bất động sản đến chương trình doanh nhân đổi mới, Harvey Law Group cung cấp lộ trình pháp lý rõ ràng cho từng hồ sơ gia đình. Hơn 33 năm kinh nghiệm – tỷ lệ phê duyệt dẫn đầu ngành.</p>
+      <h1>Định cư Châu Âu – <em>Thường Trú Nhân & Quốc Tịch</em></h1>
+      <p class="hero-desc">Harvey Law Group cung cấp lộ trình pháp lý rõ ràng cho 12 chương trình định cư châu Âu – từ Golden Visa đến visa doanh nhân.</p>
       <div class="hero-cta">
         <a href="#tu-van" class="btn btn-gold">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -1042,21 +1081,99 @@ h4,h5    { font-family: var(--font-b); font-weight: 600; color: var(--text-dark)
 <!-- ========================================================
      INTERNAL LINKS
 ======================================================== -->
-<nav class="navlinks" aria-label="Chương trình liên quan">
-  <div class="container">
-    <h2>Khám phá thêm</h2>
-    <div class="navlinks-wrap">
-      <a class="navlink" href="/dinh-cu-my">Định cư Mỹ</a>
-      <a class="navlink" href="/dinh-cu-canada">Định cư Canada</a>
-      <a class="navlink" href="/dinh-cu-chau-a-thai-binh-duong">Định cư Châu Á – TBD</a>
-      <a class="navlink" href="/dinh-cu-trung-dong">Định cư Trung Đông</a>
-      <a class="navlink" href="/dinh-cu-chau-au/golden-visa">Golden Visa châu Âu</a>
-      <a class="navlink" href="/dinh-cu-chau-au/khong-can-cu-tru">Định cư không cần cư trú</a>
-      <a class="navlink" href="/dinh-cu-chau-au/quoc-tich-eu">Lộ trình quốc tịch EU</a>
-      <a class="navlink" href="/tin-tuc/dinh-cu-chau-au">Tin tức định cư châu Âu</a>
+<footer class="hlg-footer">
+  <div class="hlg-footer-container">
+    <div class="hlg-footer-upper">
+
+      <!-- LEFT -->
+      <div class="hlg-footer-left">
+        <div class="hlg-footer-logo">
+          <span style="font-family:var(--font-b);font-weight:700;font-size:1.3rem;color:var(--white);letter-spacing:0.02em">HARVEY LAW GROUP</span>
+        </div>
+
+        <div class="hlg-footer-socials">
+          <a href="https://www.facebook.com/HLGVietnam" target="_blank" rel="nofollow external noopener noreferrer" aria-label="Facebook">
+            <svg width="22" height="22" viewBox="0 0 135 135" xmlns="http://www.w3.org/2000/svg"><circle cx="67.5" cy="67.5" r="67.5" fill="rgba(255,255,255,0.12)"/><path d="M93.77 87.01 96.76 67.5H78.04V54.84c0-5.34 2.61-10.54 11-10.54h8.51V27.69s-7.72-1.32-15.11-1.32c-15.42 0-25.5 9.34-25.5 26.26V67.5H39.8v19.51h17.14v47.17c3.44.54 6.96.82 10.55.82s7.11-.28 10.55-.82V87.01z" fill="#fff"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/harvey-law-group-vietnam/" target="_blank" rel="nofollow external noopener noreferrer" aria-label="LinkedIn">
+            <svg width="22" height="22" viewBox="0 0 135 135" xmlns="http://www.w3.org/2000/svg"><circle cx="67.5" cy="67.5" r="67.5" fill="rgba(255,255,255,0.12)"/><path d="M72.7 58.3q1.5-2 3.2-3.6 5.2-5 12.5-5 3.9 0 7.8 1 8.7 2.8 10.9 11.5a48 48 0 0 1 1.4 13.1v28q.1 1.2-1 1H93q-1.1.1-1-1V76.7q.1-3.3-.8-6.6-1.8-6-8.1-5.8-8.5.3-9.4 9-.3 2-.3 4v26q.1 1.1-1 1H57.8q-1 .2-1-1V52.2q0-1.1 1.1-1h13.8q1.2 0 1 1zM46.4 77.8v25.4q.1 1.3-1.2 1.2H30.8q-1.1.1-1-1V52q-.1-1 1-1h14.5q1.3 0 1.1 1.2zm1.3-43.7c0 5.3-4.3 9.7-9.6 9.7a9.7 9.7 0 0 1-9.6-9.6 9.6 9.6 0 0 1 19.2-.1" fill="#fff"/></svg>
+          </a>
+          <a href="https://youtube.com/@harveylawgroupvietnam" target="_blank" rel="nofollow external noopener noreferrer" aria-label="Youtube">
+            <svg width="22" height="22" viewBox="0 0 135 135" xmlns="http://www.w3.org/2000/svg"><circle cx="67.5" cy="67.5" r="67.5" fill="rgba(255,255,255,0.12)"/><path d="M110.6 45.8c-1-3.8-4-6.9-8-8-7-1.8-35.1-1.8-35.1-1.8s-28.1 0-35.2 1.9c-3.8 1-6.9 4-8 8-1.8 7-1.8 21.6-1.8 21.6s0 14.6 1.9 21.7c1 3.8 4 6.9 8 8 7 1.8 35.1 1.8 35.1 1.8s28.1 0 35.2-1.9c3.8-1 6.9-4 8-8 1.8-7 1.8-21.6 1.8-21.6s0-14.6-1.9-21.7M58.5 81V54l23.4 13.5z" fill="#fff"/></svg>
+          </a>
+        </div>
+
+        <p class="hlg-footer-desc">Harvey Law Group (HLG) là công ty luật quốc tế chuyên cung cấp dịch vụ tư vấn và hỗ trợ di trú theo hình thức đầu tư định cư và nhập tịch cho khách hàng tại Việt Nam và trên toàn thế giới.</p>
+
+        <div class="hlg-footer-links">
+          <a href="https://www.dautudinhcu.com/chinh-sach-bao-mat/">Chính sách bảo mật</a>
+          <a href="https://www.dautudinhcu.com/chinh-sach-dieu-khoan/">Chính sách điều khoản</a>
+          <a href="https://www.dautudinhcu.com/dieu-khoan-su-dung/">Điều khoản sử dụng</a>
+          <a href="https://www.dautudinhcu.com/chinh-sach-quyen-rieng-tu/">Chính sách quyền riêng tư</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Offices -->
+      <div class="hlg-footer-right">
+
+        <div class="hlg-office">
+          <div class="hlg-office-title">Tp. Hồ Chí Minh</div>
+          <div class="hlg-office-detail">
+            <svg width="16" height="16" viewBox="0 -960 960 960" fill="currentColor"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5T480-640t-56.5 23.5T400-560t23.5 56.5T480-480t56.5-23.5M480-80Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880t223.5 89T800-552q0 100-79.5 217.5T480-80"/></svg>
+            <span>Phòng 2, Tầng 40, Bitexco Financial Tower, Số 2, Hải Triều, Phường Sài Gòn, Tp. Hồ Chí Minh</span>
+          </div>
+          <div class="hlg-office-detail">
+            <svg width="16" height="16" viewBox="0 -960 960 960" fill="currentColor"><path d="M798-120q-125 0-247-54.5T329-329 174.5-551 120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12"/></svg>
+            <span><a href="tel:+842839107055">+84 28 3910 7055</a> / <a href="tel:+842839107056">+84 28 3910 7056</a></span>
+          </div>
+          <div class="hlg-office-detail">
+            <svg width="16" height="16" viewBox="0 -960 960 960" fill="currentColor"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160zm320-280 320-200v-80L480-520 160-720v80z"/></svg>
+            <a href="mailto:vietnam@harveylawcorporation.com">vietnam@harveylawcorporation.com</a>
+          </div>
+        </div>
+
+        <div class="hlg-office">
+          <div class="hlg-office-title">Đà Nẵng</div>
+          <div class="hlg-office-detail">
+            <svg width="16" height="16" viewBox="0 -960 960 960" fill="currentColor"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5T480-640t-56.5 23.5T400-560t23.5 56.5T480-480t56.5-23.5M480-80Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880t223.5 89T800-552q0 100-79.5 217.5T480-80"/></svg>
+            <span>Phòng D1, Tầng 8, Indochina Riverside Tower, 74 Bạch Đằng, Hải Châu, Đà Nẵng</span>
+          </div>
+          <div class="hlg-office-detail">
+            <svg width="16" height="16" viewBox="0 -960 960 960" fill="currentColor"><path d="M798-120q-125 0-247-54.5T329-329 174.5-551 120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12"/></svg>
+            <a href="tel:+842839107055">+84 28 3910 7055</a>
+          </div>
+          <div class="hlg-office-detail">
+            <svg width="16" height="16" viewBox="0 -960 960 960" fill="currentColor"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160zm320-280 320-200v-80L480-520 160-720v80z"/></svg>
+            <a href="mailto:danang@harveylawcorporation.com">danang@harveylawcorporation.com</a>
+          </div>
+        </div>
+
+        <div class="hlg-office">
+          <div class="hlg-office-title">Hà Nội</div>
+          <div class="hlg-office-detail">
+            <svg width="16" height="16" viewBox="0 -960 960 960" fill="currentColor"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5T480-640t-56.5 23.5T400-560t23.5 56.5T480-480t56.5-23.5M480-80Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880t223.5 89T800-552q0 100-79.5 217.5T480-80"/></svg>
+            <span>Phòng 15.08, Tầng 15, Tòa nhà Cornerstone, Số 16 Phố Phan Chu Trinh, Cửa Nam, Hà Nội</span>
+          </div>
+          <div class="hlg-office-detail">
+            <svg width="16" height="16" viewBox="0 -960 960 960" fill="currentColor"><path d="M798-120q-125 0-247-54.5T329-329 174.5-551 120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12"/></svg>
+            <a href="tel:+842432668563">+84 24 3266 8563</a>
+          </div>
+          <div class="hlg-office-detail">
+            <svg width="16" height="16" viewBox="0 -960 960 960" fill="currentColor"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160zm320-280 320-200v-80L480-520 160-720v80z"/></svg>
+            <a href="mailto:hanoi@harveylawcorporation.com">hanoi@harveylawcorporation.com</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hlg-footer-lower">
+      <div class="hlg-footer-license">Giấy Đăng ký hoạt động số 49/TP/ĐKHĐ do Sở Tư pháp Thành phố Hồ Chí Minh cấp.</div>
+      <hr>
+      <div class="hlg-footer-copyright">© 2026 Harvey Law Group Vietnam. All Rights Reserved.</div>
     </div>
   </div>
-</nav>
+</footer>
 
 <!-- ========================================================
      CONSULT MODAL (shared across all card CTAs)
